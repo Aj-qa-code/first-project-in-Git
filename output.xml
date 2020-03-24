@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200323 14:24:37.683" generator="Robot 3.1.2 (Python 2.7.16 on darwin)">
+<suite source="/Users/admin/Desktop/udemy-automation/primeraautomatizacion.robot" id="s1" name="Primeraautomatizacion">
+<test id="s1-t1" name="G001 Búsqueda de palabras en google">
+<kw name="Abrir Navegador y Esperar Logo" library="recursos">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Navegador}</arg>
+</arguments>
+<msg timestamp="20200323 14:24:37.904" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" endtime="20200323 14:24:41.679" starttime="20200323 14:24:37.904"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="hplogo"]</arg>
+</arguments>
+<status status="PASS" endtime="20200323 14:24:41.719" starttime="20200323 14:24:41.680"></status>
+</kw>
+<status status="PASS" endtime="20200323 14:24:41.719" starttime="20200323 14:24:37.903"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/Input</arg>
+<arg>${palabrasabuscar}</arg>
+</arguments>
+<msg timestamp="20200323 14:24:41.720" level="INFO">Typing text 'casos de prueba' into text field 'xpath=//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/Input'.</msg>
+<status status="PASS" endtime="20200323 14:24:41.944" starttime="20200323 14:24:41.720"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="tsf"]/div[2]/div[1]/div[3]/center/input[1]</arg>
+</arguments>
+<msg timestamp="20200323 14:24:41.944" level="INFO">Clicking element 'xpath=//*[@id="tsf"]/div[2]/div[1]/div[3]/center/input[1]'.</msg>
+<status status="PASS" endtime="20200323 14:24:43.624" starttime="20200323 14:24:41.944"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${palabrasabuscar} - Buscar con Google</arg>
+</arguments>
+<msg timestamp="20200323 14:24:43.635" level="INFO">Page title is 'casos de prueba - Buscar con Google'.</msg>
+<status status="PASS" endtime="20200323 14:24:43.636" starttime="20200323 14:24:43.625"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${palabrasabuscar}</arg>
+</arguments>
+<msg timestamp="20200323 14:24:43.679" level="INFO">Current page contains text 'casos de prueba'.</msg>
+<status status="PASS" endtime="20200323 14:24:43.679" starttime="20200323 14:24:43.636"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200323 14:24:43.973" starttime="20200323 14:24:43.679"></status>
+</kw>
+<status status="PASS" endtime="20200323 14:24:43.973" critical="yes" starttime="20200323 14:24:37.902"></status>
+</test>
+<test id="s1-t2" name="G002 Hacer click en el botón de búsqueda sin escribir palabras en Google">
+<kw name="Abrir Navegador y Esperar Logo" library="recursos">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Navegador}</arg>
+</arguments>
+<msg timestamp="20200323 14:24:43.978" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" endtime="20200323 14:24:47.368" starttime="20200323 14:24:43.978"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="hplogo"]</arg>
+</arguments>
+<status status="PASS" endtime="20200323 14:24:47.401" starttime="20200323 14:24:47.369"></status>
+</kw>
+<status status="PASS" endtime="20200323 14:24:47.402" starttime="20200323 14:24:43.977"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="tsf"]/div[2]/div[1]/div[3]/center/input[1]</arg>
+</arguments>
+<msg timestamp="20200323 14:24:47.403" level="INFO">Clicking element 'xpath=//*[@id="tsf"]/div[2]/div[1]/div[3]/center/input[1]'.</msg>
+<status status="PASS" endtime="20200323 14:24:47.466" starttime="20200323 14:24:47.402"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Google</arg>
+</arguments>
+<msg timestamp="20200323 14:24:47.475" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" endtime="20200323 14:24:47.475" starttime="20200323 14:24:47.466"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200323 14:24:47.560" starttime="20200323 14:24:47.476"></status>
+</kw>
+<status status="PASS" endtime="20200323 14:24:47.560" critical="yes" starttime="20200323 14:24:43.976"></status>
+</test>
+<status status="PASS" endtime="20200323 14:24:47.562" starttime="20200323 14:24:37.685"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Primeraautomatizacion" pass="2">Primeraautomatizacion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
